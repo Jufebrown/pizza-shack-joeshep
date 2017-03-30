@@ -1,0 +1,34 @@
+extends partials/layout
+
+block content
+  .heading
+    h1 Register
+    if msg
+      h2= msg
+  .login-form
+    form(method='POST')
+      .form-group
+        label(for='email') Email Address
+        input.form-control#email(
+          type='email'
+          name='email'
+          placeholder='beelzebub@hell.com'
+          required
+        )
+        label(for='password') Password
+        input.form-control#password(
+          type='password'
+          name='password'
+          placeholder='password'
+          required
+        )
+        label(for='confirmation') Password
+        input.form-control#confirmation(
+          type='password'
+          name='confirmation'
+          placeholder='password'
+          required
+        )
+      .contact-form__submit
+        a.btn.btn-danger.btn-lg(href='/') Cancel
+        input.btn.btn-success.btn-lg(type='submit' value='Register')
