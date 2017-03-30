@@ -5,6 +5,12 @@ const app = express()
 
 app.set('view engine', 'pug')
 
+app.locals.company = `💩☠️Pizza Shack`
+app.locals.body = {}
+app.locals.body.magic = `Foooooo!`
+
+
+/**************Middlewares************/
 app.use(express.static('public'))
 
 app.get('/', (req, res, next) => {
