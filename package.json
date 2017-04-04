@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "db:reset": "knex migrate:rollback && knex migrate:latest && knex seed:run",
     "start": "nodemon ./app.js",
     "deploy": "git push heroku master"
   },
