@@ -6,6 +6,12 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'postgres://localhost/pizza_shack'
+    },
+    migrations: {
+      directory: __dirname + "/db/migrations"
+    },
+    seeds: {
+      directory: __dirname + "/db/seeds"
     }
   },
 
