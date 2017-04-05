@@ -2,7 +2,7 @@
 
 const Contact = require('../models/contactModel')
 
-module.exports.show = (req, res, next) => {
+module.exports.show = (req, res) => {
   res.render('contact', {page: 'Contact'})
 }
 
