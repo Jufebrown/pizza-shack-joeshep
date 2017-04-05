@@ -1,25 +1,26 @@
 [
-   { "name": "Anchovies" },
-   { "name": "Bacon" },
-   { "name": "Banana Peppers" },
-   { "name": "Beef" },
-   { "name": "Broccoli" },
-   { "name": "Chicken" },
-   { "name": "Green Peppers" },
-   { "name": "Ham" },
-   { "name": "Jalapeño" },
-   { "name": "Meatballs" },
-   { "name": "Mozzarella" },
-   { "name": "Mushrooms" },
-   { "name": "Olives" },
-   { "name": "Onions" },
-   { "name": "Pepperoni" },
-   { "name": "Pineapple" },
-   { "name": "Red Peppers" },
-   { "name": "Salami" },
-   { "name": "Sausage" },
-   { "name": "Shrimp" },
-   { "name": "Sour Patch Kids" },
-   { "name": "Spinach" },
-   { "name": "Steak" }
+    {
+        "name": "Fun",
+        "inches": 2
+    },
+    {
+        "name": "Personal",
+        "inches": 8
+    },
+    {
+        "name": "Small",
+        "inches": 10
+    },
+    {
+        "name": "Medium",
+        "inches": 12
+    },
+    {
+        "name": "Large",
+        "inches": 14
+    },
+    {
+        "name": "Murica",
+        "inches": 1776
+    }
 ]
