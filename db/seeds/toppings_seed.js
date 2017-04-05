@@ -1,15 +1,14 @@
 `use strict`
-const {knex} = require('knex')
+const toppings = require('./toppings')
 
 exports.seed = function(knex, Promise) {
+  let toppingsPromises = toppings.map(({name}) => {
+    return knex('toppings').insert({toppings_name: name})
+  })
+
   // Deletes ALL existing entries
   return knex('toppings').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('toppings').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
+    .then(() => {
+      return Promise.all(toppingsPromises)
     });
 };
