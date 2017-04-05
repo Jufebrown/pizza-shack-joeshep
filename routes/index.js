@@ -5,7 +5,7 @@ const router = Router()
 
 // public routes
 router.use(require(`./about`))
-// router.use(require(`./contact`))
+router.use(require(`./contact`))
 // router.use(require(`./login`))
 // router.use(require(`./register`))
 router.use(require(`./root`))
