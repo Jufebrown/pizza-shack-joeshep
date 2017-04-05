@@ -19,3 +19,7 @@ body {
 .contact-form__submit {
   text-align: right
 }
+
+.cancel-btn {
+  margin-right: 10px;
+}
