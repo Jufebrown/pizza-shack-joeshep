@@ -16,6 +16,6 @@ exports.seed = function(knex, Promise) {
   return knex('sizes').del()
     .then(() => {
       // Inserts seed entries
-      return promise.all(sizePromises)
+      return Promise.all(sizePromises)
     });
 };
