@@ -15,7 +15,7 @@ app.locals.body.magic = `Foooooo!`
 
 /**************Middlewares************/
 app.use(express.static('public'))
-
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(routes)
 
 app.get('/login', (req, res, next) => {
