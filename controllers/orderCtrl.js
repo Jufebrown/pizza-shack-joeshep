@@ -28,20 +28,22 @@ module.exports.show = (req, res, err) => {
 }
 
 module.exports.create = ({body}, res, err) => {
+  console.log('body', body)
   Order.forge(body)
   .save()
   .then((orderObj) => {
-    res.render('index', {orderMsg: 'Thanks for your order! Good luck getting it!'})
+    return res.render('index', {orderMsg: 'Thanks for your order! Good luck getting it!'})
   })
   .catch(({errors}) => {
-    Promise.all([
+    // console.log(errors)
+    return Promise.all([
       Promise.resolve(errors),
       getSizes(),
       getToppings()
     ])
   })
   .then(([errors, sizes, toppings]) => {
-    res.render('order', {page: 'Order', sizes, toppings, errors, body})
+    return res.render('order', {page: 'Order', sizes, toppings, errors, body})
   })
   .catch(err)
 }

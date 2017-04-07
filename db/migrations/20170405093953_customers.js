@@ -3,8 +3,8 @@ exports.up = function(knex, Promise) {
     return knex.schema
     .createTable('customers', (table) => {
       table.increments()
-      table.string('order_email').notNullable()
-      table.string('order_password').notNullable()
+      table.string('email').notNullable()
+      table.string('password').notNullable()
     })
 };
 

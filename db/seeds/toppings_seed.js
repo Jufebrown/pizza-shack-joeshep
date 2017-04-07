@@ -3,7 +3,7 @@ const toppings = require('./toppings')
 
 exports.seed = function(knex, Promise) {
   let toppingsPromises = toppings.map(({name}) => {
-    return knex('toppings').insert({toppings_name: name})
+    return knex('toppings').insert({name: name})
   })
 
   // Deletes ALL existing entries

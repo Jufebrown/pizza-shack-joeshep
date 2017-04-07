@@ -8,7 +8,8 @@ block content
     h1 Order
   .order-form
     form(method="POST")
-      .form-group(class={'has-error': errors.name})
+      //- (class={'has-error': errors.name})
+      .form-group
         label.control-label(for='name') Name
         input.form-control#name(
           type='text'
@@ -17,9 +18,10 @@ block content
           value=body.name
           required
         )
-        if errors.name
-          span.help-block= errors.name.message
-      .form-group(class={'has-error': errors.phone})
+        //- if errors.name
+        //-   span.help-block= errors.name.message
+        //- (class={'has-error': errors.phone})
+      .form-group
         label.control-label(for='phone') Phone Number
         input.form-control#phone(
           type='tel'
@@ -28,9 +30,23 @@ block content
           value=body.phone
           required
         )
-        if errors.phone
-          span.help-block= errors.phone.message
-      .form-group(class={'has-error': errors.size})
+        //- if errors.phone
+        //-   span.help-block= errors.phone.message
+      //- (class={'has-error': errors.size})
+        //- (class={'has-error': errors.email})
+      .form-group
+        label.control-label(for='email') Email
+        input.form-control#email(
+          type='email'
+          name='email'
+          placeholder='beelzebub@hell.com'
+          value=body.email
+          required
+        )
+        //- if errors.phone
+        //-   span.help-block= errors.phone.message
+      //- (class={'has-error': errors.size})
+      .form-group
         label.control-label(for='size') Size
         select.form-control#size(
           name='size'
@@ -41,21 +57,22 @@ block content
             option(
               value=size.sizes_inches
               selected=(+body.size === +size.sizes_inches)
-            ) #{size.sizes_name}: #{size.sizes_inches}
-        if errors.size
-          span.help-block= errors.size.message
-      #toppings(class={'has-error': errors.toppings})
+            ) #{size.name}: #{size.inches}
+        //- if errors.size
+        //-   span.help-block= errors.size.message
+      //- (class={'has-error': errors.toppings})
+      #toppings
         h5 Toppings:
         each topping in toppings
-          label= topping.toppings_name
+          label= topping.name
           input(
             type='checkbox'
             name='toppings'
-            value=topping.toppings_name
-            selected=(body.toppings && body.toppings.includes(topping.toppings_name))
+            value=topping.name
+            selected=(body.toppings && body.toppings.includes(topping.name))
           )
-        if errors.toppings
-          span.help-block= errors.toppings.message
+        //- if errors.toppings
+        //-   span.help-block= errors.toppings.message
       .order-form__submit
         a.btn.btn-danger.btn-lg.cancel-btn(href='/') Cancel
         input.btn.btn-success.btn-lg(type="submit" value='Order It!')
