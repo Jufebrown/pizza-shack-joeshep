@@ -39,15 +39,6 @@ app.use(session({
 app.use(express.static('public'))
 app.use(routes)
 
-
-app.get('/login', (req, res, next) => {
-  res.render('login', {page: 'Login'})
-})
-
-app.get('/register', (req, res, next) => {
-  res.render('register', {page: 'Register'})
-})
-
 app.use((req, res) => {
   res.render('404')
 })
