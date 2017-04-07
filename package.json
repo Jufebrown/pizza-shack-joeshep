@@ -23,8 +23,11 @@
     "body-parser": "^1.17.1",
     "bookshelf": "^0.10.3",
     "bookshelf-bcrypt": "^2.1.0",
+    "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
     "express": "^4.15.2",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.2",
     "knex": "^0.12.9",
     "pg": "^6.1.5",
     "pug": "^2.0.0-beta11"
