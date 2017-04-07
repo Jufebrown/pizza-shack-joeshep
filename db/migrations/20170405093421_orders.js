@@ -11,7 +11,4 @@ exports.up = function(knex, Promise) {
     })
 };
 
-exports.down = function(knex, Promise) {
-  return knex.schema
-    .dropTableIfExists('orders')
-};
+exports.down = (knex, Promise) => knex.schema.dropTableIfExists('orders')

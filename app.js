@@ -35,6 +35,15 @@ app.use(session({
   secret: process.env.SESSION_SECRET || 'pizzashacksupersecretkey'
 }))
 
+require('./lib/passport-strategies')
+app.use(passport.initialize())
+app.use(passport.session())
+
+app.use((req, res, next) => {
+  // sets app.locals.email to true or false
+  app.locals.email = req.user && req.user.email
+  next()
+})
 
 app.use(express.static('public'))
 app.use(routes)
