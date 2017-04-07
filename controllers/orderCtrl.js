@@ -27,23 +27,23 @@ module.exports.show = (req, res, err) => {
   .catch(err)
 }
 
-module.exports.create = ({body}, res, err) => {
+module.exports.create = ({body, flash}, res, err) => {
   console.log('body', body)
   Order.forge(body)
   .save()
   .then((orderObj) => {
-    return res.render('index', {orderMsg: 'Thanks for your order! Good luck getting it!'})
+    flash('orderMsg', 'Thanks for your order! Good luck getting it!')
+    res.redirect('/')
   })
-  .catch(({errors}) => {
-    // console.log(errors)
-    return Promise.all([
-      Promise.resolve(errors),
+  .catch((err) => {
+    Promise.all([
+      Promise.resolve(err),
       getSizes(),
       getToppings()
     ])
-  })
-  .then(([errors, sizes, toppings]) => {
-    return res.render('order', {page: 'Order', sizes, toppings, errors, body})
+    .then(([errors, sizes, toppings]) => {
+      return res.render('order', {page: 'Order', sizes, toppings, errors, body})
+    })
   })
   .catch(err)
 }
